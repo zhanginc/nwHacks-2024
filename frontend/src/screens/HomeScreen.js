@@ -11,7 +11,7 @@ export const HomeScreen = ({navigation}) => {
             <Image
                 source={require('../images/Home_Page.svg')}
             />
-       
+                
                 <View style={styles.overlayTextContainer}>
                     <Text style={styles.overlayText} >
                         Welcome Back!
@@ -28,16 +28,23 @@ export const HomeScreen = ({navigation}) => {
                 </View>
             
                 <View style={styles.content}>
-                    <TouchableOpacity onPress={() => navigation.navigate('Sign in')} 
-                                      style={styles.button}>
-                        <ButtonComponent buttonText={"Today's Journal"} onPress={() => navigation.navigate('QuestionForm')}/>
-
-                        <ButtonComponent buttonText={"This Weeks Journal"} onPress={() => navigation.navigate('Journals')}/>
-                        <ButtonComponent buttonText={"Weekly Summary"} onPress ={() => navigation.navigate("Summary")}/>
-                        <ButtonComponent buttonText={"Your Archive"}/>
-                        
+                <View style={styles.container}>
+                    <TouchableOpacity  style={styles.button}>
+                        <ButtonComponent buttonText={"Today's Journal"} onPress={() => navigation.navigate('QuestionForm')} variant='journal'/>
                     </TouchableOpacity>
-                
+
+                    <TouchableOpacity style={styles.button}>
+                        <ButtonComponent buttonText={"This Weeks Journal"} onPress={() => navigation.navigate('Journals')} variant='journal'/>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity  style={styles.button}>
+                        <ButtonComponent buttonText={"Weekly Summary"} onPress={() => navigation.navigate("Summary")} variant='journal'/>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.button}>
+                        <ButtonComponent buttonText={"Your Archive"} variant='journal'/>
+                    </TouchableOpacity>
+            </View>
                 </View>
 
         </View>
@@ -50,12 +57,10 @@ export const HomeScreen = ({navigation}) => {
         const styles = StyleSheet.create({
             container: {
                 flex: 1,
-                backgroundColor: '#102945',
-                width: '100%',
-                height: '100%',
-                position: 'absolute',
-                top: 0,
-                left: 0,
+                width: "100%",
+                flexDirection: "column",
+                gap: 20,
+        
                 
             },
             overlayTextContainer: {
@@ -68,22 +73,25 @@ export const HomeScreen = ({navigation}) => {
         
               content: {
                 position: 'absolute',
-                top: '50%', // Adjust to 30
+                top: '35%', // Adjust to 30
                 left: 0,
                 right: 0,
+                marginBottom: 10
               },
         
               overlayText: {
                 fontSize: 40,
+                fontWeight:10,
+                fontFamily: 'Lexend, sans-serif',
                 color: '#D6F8FA', 
-                width: "100%",
+                
                 textAlign: 'left',
                 left: 40,
                 top: 40,
-                fontWeight: "light"
               },
               overlayText2: {
-                fontWeight:1000,
+                fontFamily: 'Lexend, sans-serif',
+                fontWeight:500,
                 fontSize: 40,
                 color: '#D6F8FA', 
                 width: "100%",
@@ -92,6 +100,8 @@ export const HomeScreen = ({navigation}) => {
                 top: 40
               },
               overlayText3: {
+                fontWeight: 150,
+                fontFamily: 'Lexend, sans-serif',
                 fontSize: 18,
                 color: '#D6F8FA', 
                 left: 40,
@@ -102,9 +112,14 @@ export const HomeScreen = ({navigation}) => {
               },
         
               button:{
-                borderRadius: 30,
-                backgroundColor: "#ABE1E1",
+                
+                borderRadius: 10,
+               
+                
+                backgroundColor: "transparent",
                 color: 'white',
+                
+                
     
               },
               kitty:{

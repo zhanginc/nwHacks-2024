@@ -16,7 +16,7 @@ export const ButtonComponent = ({buttonText, onPress, variant}) => {
                 variant === 'start' && styles.getStarted // Conditional styling for 'special'
               ]}
               onPress={onPress}>
-                <Text style={styles.getStartedText} >{buttonText}</Text> 
+                <Text style={variant === 'journal' ? styles.journalButtonText : styles.getStartedText} >{buttonText}</Text> 
             </Pressable>
         </View>
     );
@@ -38,16 +38,31 @@ const styles = StyleSheet.create({
             color: '#112945',
         },
         journalButton:{
-            borderRadius: 30,
-            backgroundColor: "#ABE1E1",
+            borderRadius: 10,
+            backgroundColor: "#105268",
             color: 'white',
             padding: 20,
             height: 100,
             alignContent: 'center',
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
+            marginHorizontal: 20,
+            shadowColor: "#000",
+            shadowOffset: {
+                width: 0,
+                height: 2,
+            },
+            shadowOpacity: 0.5,
+            shadowRadius: 20,
+            
 
-        }
+        }, 
+        journalButtonText: {
+            color: 'white',
+            fontFamily: 'Lexend, sans-serif',
+            fontWeight: '300',
+            fontSize: '20px',
+        },
 
 
     });

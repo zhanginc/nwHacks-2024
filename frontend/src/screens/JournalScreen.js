@@ -23,18 +23,35 @@ export const JournalScreen = ({navigation}) => {
                 </View>
             
                 <View style={styles.content}>
-                    <TouchableOpacity onPress={() => navigation.navigate('Sign in')} 
-                                      style={styles.button}>
-                        <ButtonComponent buttonText={"Monday"}/>
-                        <ButtonComponent buttonText={"Tuesday"}/>
-                        <ButtonComponent buttonText={"Wednesday"}/>
-                        <ButtonComponent buttonText={"Thursday"}/>
-                        <ButtonComponent buttonText={"Friday"}/>
-                        <ButtonComponent buttonText={"Saturday"}/>
-                        <ButtonComponent buttonText={"Sunday"}/>
-                        
+                <View style={styles.container}>
+                    <TouchableOpacity  style={styles.button}>
+                        <ButtonComponent buttonText={"Monday"} onPress={() => navigation.navigate('Summary')} variant='journal'/>
                     </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.button}>
+                        <ButtonComponent buttonText={"Tuesday"} onPress={() => navigation.navigate('Summary')} variant='journal'/>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity  style={styles.button}>
+                        <ButtonComponent buttonText={"Wednesday"} onPress={() => navigation.navigate("Summary")} variant='journal'/>
+                    </TouchableOpacity>
+                    <TouchableOpacity  style={styles.button}>
+                        <ButtonComponent buttonText={"Thursday"} onPress={() => navigation.navigate('Summary')} variant='journal'/>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.button}>
+                        <ButtonComponent buttonText={"Friday"} onPress={() => navigation.navigate('Summary')} variant='journal'/>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity  style={styles.button}>
+                        <ButtonComponent buttonText={"Saturday"} onPress={() => navigation.navigate("Summary")} variant='journal'/>
+                    </TouchableOpacity>
+                    <TouchableOpacity  style={styles.button}>
+                        <ButtonComponent buttonText={"Sunday"} onPress={() => navigation.navigate("Summary")} variant='journal'/>
+                    </TouchableOpacity>
+
                 
+            </View>
                 </View>
 
         </View>
@@ -48,12 +65,10 @@ export const JournalScreen = ({navigation}) => {
         const styles = StyleSheet.create({
             container: {
                 flex: 1,
-                backgroundColor: '#102945',
-                width: '100%',
-                height: '100%',
-                position: 'absolute',
-                top: 0,
-                left: 0,
+                width: "100%",
+                flexDirection: "column",
+                gap: 20,
+        
                 
             },
             overlayTextContainer: {
@@ -66,14 +81,16 @@ export const JournalScreen = ({navigation}) => {
         
               content: {
                 position: 'absolute',
-                top: '50%', // Adjust to 30
+                top: '18%', 
                 left: 0,
                 right: 0,
+                marginBottom: 10
               },
         
               overlayText: {
                 fontSize: 18,
                 color: '#D6F8FA', 
+                fontFamily: 'Lexend, sans-serif',
                 width: "100%",
                 textAlign: 'left',
                 left: 40,
@@ -82,7 +99,8 @@ export const JournalScreen = ({navigation}) => {
               },
               overlayText1: {
                 fontWeight:1000,
-                fontSize: 30,
+                fontFamily: 'Lexend, sans-serif',
+                fontSize: 25,
                 color: '#D6F8FA', 
                 width: "100%",
                 textAlign: 'left',
@@ -90,16 +108,16 @@ export const JournalScreen = ({navigation}) => {
                 top: 50
               },
         
-              button:{
-                borderRadius: 30,
-                backgroundColor: "#ABE1E1",
+             button:{
+                
+                borderRadius: 10,
+               
+                
+                backgroundColor: "transparent",
                 color: 'white',
+                
     
               },
-              kitty:{
-                left: 205,
-                top: -60
-              }
         })
             
 
