@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity, Button } from 'react-native';
 import { ButtonComponent } from "../components/ButtonComponent";
 import { CardComponent } from "../components/CardComponent";
 
+
 export const HomeScreen = ({navigation}) => {
     return(
         <View style={{
