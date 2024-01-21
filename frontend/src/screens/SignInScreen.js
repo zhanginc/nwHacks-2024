@@ -1,8 +1,12 @@
-import React from "react";
-import { StyleSheet, Text, View, TouchableOpacity, Button, Image } from 'react-native';
+import React, { useState } from "react";
+import { StyleSheet, Text, View, TouchableOpacity, Button, Image, TextInput } from 'react-native';
 import { ButtonComponent } from "../components/ButtonComponent";
 
+
 export const SignInScreen = ({navigation}) => {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
     return(
         <View style={styles.container}>
             <Image
@@ -10,12 +14,27 @@ export const SignInScreen = ({navigation}) => {
             />
                 <View style={styles.overlayTextContainer}>
                     <Text style={styles.overlayText} >
-                        Welcome to Whispers
+                        Sign in
                     </Text>
                 </View>
-            
+                <View style={styles.input}>
+                    <TextInput
+                    style={styles.inputField}
+                    value={username} 
+                    onChangeText={setUsername}
+                    placeholder="Username"
+                    />
+                    <TextInput
+                    style={styles.inputField}
+                    value={password} 
+                    onChangeText={setPassword}
+                    placeholder="Password"
+                    />
+                </View>
+
                 <View style={styles.content}>
-                    <ButtonComponent buttonText={"Sign in"} 
+                    <ButtonComponent 
+                        buttonText={"Sign in"} 
                         onPress={() => navigation.navigate('Home')}
                         variant={"start"}
                     />
@@ -38,17 +57,16 @@ const styles = StyleSheet.create({
     },
     overlayTextContainer: {
         position: 'absolute',
-        top: 0,
+        top: "40%",
         left: 0,
         right: 0,
-        bottom: 0,
         justifyContent: 'center',
         alignItems: 'center',
       },
 
       content: {
         position: 'absolute',
-        top: '60%', // Adjust the percentage as needed
+        top: '70%', 
         left: 0,
         right: 0,
         justifyContent: 'center',
@@ -67,7 +85,26 @@ const styles = StyleSheet.create({
         backgroundColor: "#ABE1E1",
         color: 'white',
         padding: 20,
-      }
+      },
+
+      input: {
+        position: 'absolute',
+        top: '50%', // Adjust the percentage as needed
+        left: 0,
+        right: 0,
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: 20
+
+      },
+
+      inputField: {
+        width: '80%',
+        height: 40,
+        backgroundColor: 'white',
+        borderRadius: 8,
+        paddingLeft: 10,
+      },
 })
 
 
