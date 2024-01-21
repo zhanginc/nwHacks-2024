@@ -111,6 +111,7 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
         alignContent: 'flex-end',
         alignItems:'flex-end',
+         backgroundColor:  '#112945',
         
     },
     containerMain: {

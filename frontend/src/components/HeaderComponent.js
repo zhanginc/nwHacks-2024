@@ -31,7 +31,6 @@ const styles = StyleSheet.create({
         backgroundColor: "#105268",
         padding: 20,
         rowGap: 10,
-        borderRadius: 10,
     },
 
     heading: {
