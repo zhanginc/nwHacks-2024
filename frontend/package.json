@@ -22,12 +22,9 @@
     "react-native-chat-bubble": "^1.0.0",
     "react-native-safe-area-context": "4.8.2",
     "react-native-screens": "~3.29.0",
-<<<<<<< HEAD
     "react-native-size-matters": "^0.4.2",
     "react-native-svg": "14.1.0",
-=======
     "react-native-svg": "^14.1.0",
->>>>>>> d1761999df760de050fa2f16c1e7b65b50f5de83
     "react-native-typing-text": "^0.0.3",
     "react-native-web": "~0.19.6",
     "react-navigation": "^5.0.0",
