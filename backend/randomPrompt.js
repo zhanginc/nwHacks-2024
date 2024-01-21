@@ -6,14 +6,11 @@ const prompts = require('./prompts.json');
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-  
+
+
+// generates a random prompt from the list of prompts in prompts.json indexed between 0-28
 const generate = function () {
-    const randomArray = [];
     const random = getRandomNumber(0,28);
-    while(randomArray.includes(random)) {
-        random = getRandomNumber(0,28);
-    }
-    randomArray.push(random);
     return prompts[random];
 }
 

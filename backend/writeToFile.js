@@ -7,6 +7,7 @@ const jsonArray = JSON.parse(rawData);
 
 console.log(JSON.stringify(jsonArray));
 
+// writes new object to summary.json file by pushing it to the existing array 
 const writeToFile = function (date, day, summary, sentiment, confidence) {
     newData(date, day, summary, sentiment, confidence);
 
@@ -22,6 +23,7 @@ const writeToFile = function (date, day, summary, sentiment, confidence) {
     console.log('New data has been added as a separate object to', filePath);
 }
 
+// adds new data to the object with keys
 const newData = function (date, day, summary, sentiment, confidence) {
     jo.date = date;
     jo.day = day;
@@ -29,7 +31,5 @@ const newData = function (date, day, summary, sentiment, confidence) {
     jo.sentiment = sentiment;
     jo.confidence = confidence;
 }
-
-writeToFile(22012024, "Sunday", "ABC", "angry", 0.999);
 
 module.exports = { writeToFile };

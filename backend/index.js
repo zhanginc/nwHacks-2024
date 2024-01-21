@@ -12,7 +12,8 @@ const cohere = new CohereClient({
     token: "93BOuwwCB7ED5t9qjVIYh62RL5TLGamMwnTgGn61",
 });
 
-
+// the summarize function. needs one input string (concatenated with all responses) to generate a paragraph as summary. output appears as
+// 'summary' in summary.json.
 const summarize = async function (input) {
     const response = await cohere.summarize({
         text: input.toString(),
@@ -25,6 +26,9 @@ const summarize = async function (input) {
     fs.writeFileSync("summary.json", JSON.stringify(response));
 }; 
 
+
+// the classify emotion function. needs one input string that it adds to a list (requirement of parameter) to generate a label and a confidence
+// score. appears as 'sentiment' and 'confidence' in summary.json.
 const classify = async function (input) {
     const arr = [];
     arr.push(input);

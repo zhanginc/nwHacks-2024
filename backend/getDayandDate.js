@@ -1,10 +1,12 @@
 const date = new Date();
 
+// uses Date library to get current date in DDMMYYYY format
 const getToday = function () {
     const dateno = date.getDate() * 1000000 + (date.getMonth() + 1) * 10000 + date.getFullYear();
     return dateno;
 };
 
+// uses Date library to get day of week as a number (0-6) and convert it to corresponding string (Sunday-Saturday)
 const getDayofWeek = function() {
     const dayno = date.getDay();
     switch(dayno) {
