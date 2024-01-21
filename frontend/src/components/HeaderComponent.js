@@ -1,20 +1,20 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, Pressable } from "react-native";
+import { View, Text, StyleSheet, Image, Pressable, TouchableOpacity } from "react-native";
 import moment from 'moment';
-
+import { useNavigation } from '@react-navigation/native';
 
 
 
 export const HeaderComponent = () => {
     let currentDate = moment().format('dddd, MMMM Do');
-
+    const navigation = useNavigation();
     return(
         <View style={styles.container}>
-            <Pressable onPress={() => navigation.navigate('Home')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
             <Image
                 source={require('../images/chevron-left.png')}
             />
-            </Pressable>
+            </TouchableOpacity>
             <Text style={styles.subHeading}>
                 Journal Entry
             </Text>
