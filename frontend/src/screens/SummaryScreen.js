@@ -32,7 +32,7 @@ export const SummaryScreen = ({ navigation, dateText, emotion, quote, summary })
                     Todays Summary
                 </Text>
 
-                <CardComponent chatText={summary} >
+                <CardComponent style={styles.chat} chatText={summary} >
                 </CardComponent>
 
                 <Text style={styles.overlayText2} >
@@ -47,7 +47,7 @@ export const SummaryScreen = ({ navigation, dateText, emotion, quote, summary })
                 />
                      <View style={styles.button}>
                     <ButtonComponent buttonText={"Go Home"} 
-                        onPress={() => navigation.navigate('home')}
+                        onPress={() => navigation.navigate('Home')}
                         variant={"home"}
                     />
                 </View>
@@ -69,8 +69,10 @@ const styles = StyleSheet.create({
         height: '80%',
         bottom: 0,
         borderRadius: 10,
-        backgroundColor: '#105268',
-
+        backgroundColor: 'rgb(16,82,104)',
+        backgroundImage: 'linear-gradient(180deg, rgba(16,82,104,1) 58%, rgba(17,41,69,1) 100%)',
+    },
+    chat: {
     },
     cat: {
         position: 'absolute',

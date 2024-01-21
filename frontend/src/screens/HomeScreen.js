@@ -34,7 +34,7 @@ export const HomeScreen = ({navigation}) => {
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.button}>
-                        <ButtonComponent buttonText={"This Weeks Journal"} onPress={() => navigation.navigate('Journals')} variant='journal'/>
+                        <ButtonComponent buttonText={"This Weeks Journals"} onPress={() => navigation.navigate('Journals')} variant='journal'/>
                     </TouchableOpacity>
 
                     <TouchableOpacity  style={styles.button}>
@@ -73,7 +73,7 @@ export const HomeScreen = ({navigation}) => {
         
               content: {
                 position: 'absolute',
-                top: '35%', // Adjust to 30
+                top: '25%', // Adjust to 30
                 left: 0,
                 right: 0,
                 marginBottom: 10

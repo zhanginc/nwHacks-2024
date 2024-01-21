@@ -34,6 +34,8 @@ const styles = StyleSheet.create({
         width: 300,
         width: "100%",
         height: 150,
+        
+        filter: ' drop-shadow(4px 7px 5px #13273F)',
     },
     chatBubble: {
         borderRadius: 10,

@@ -50,7 +50,7 @@ export const QuestionForm = () => {
 
 
     return(
-        <View>
+        <View style={styles.containerMain}>
         <HeaderComponent />
          <ScrollView style={styles.scrollContainer}
                      ref={scrollViewRef}
@@ -107,6 +107,9 @@ const styles = StyleSheet.create({
         alignContent: 'flex-end',
         alignItems:'flex-end',
         
+    },
+    containerMain: {
+        backgroundColor:  '#112945',
     },
 
     questionAnswerContainer: {
