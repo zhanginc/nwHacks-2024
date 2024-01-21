@@ -32,6 +32,7 @@ export const WelcomeScreen = ({navigation}) => {
     );
 }
 
+
 const styles = StyleSheet.create({
     container: {
 

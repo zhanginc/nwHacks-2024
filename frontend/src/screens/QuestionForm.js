@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, TextInput } from 'react-native';
 import TypingText from 'react-native-typing-text';
 import { Button } from "react-native-web";
 import { HeaderComponent } from "../components/HeaderComponent";
@@ -51,7 +51,7 @@ export const QuestionForm = () => {
 
 
     return(
-        <>
+        <View>
         <HeaderComponent />
          <ScrollView style={styles.scrollContainer}
                      ref={scrollViewRef}
@@ -66,20 +66,20 @@ export const QuestionForm = () => {
 
         </ScrollView>
         <form onSubmit={handleQuestionSubmit} style={styles.inputContainer} >
-            <input
-            type="text"
+            <TextInput
             value={currentAnswer}
             onChange={(e) => setCurrentAnswer(e.target.value)}
             placeholder="Draft"
             style={styles.answerInput}
             />
+
             <Button type="submit" onPr>Submit </Button>
             
         </form>        
         <View style={styles.voiceRecordContainer}>
 
         </View>
-        </>
+        </View>
        
     );
      
