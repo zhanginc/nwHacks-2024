@@ -9,12 +9,15 @@ import { JournalScreen } from './src/screens/JournalScreen';
 import { SummaryScreen } from './src/screens/SummaryScreen';
 import { QuestionForm } from './src/screens/QuestionForm';
 
+
 const Stack = createNativeStackNavigator();
 
 
 export default function App() {
   return (
+    
     <NavigationContainer>
+      <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"></link>
       <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Welcome" component={WelcomeScreen} />  
       <Stack.Screen name="Sign in" component={SignInScreen} />
@@ -28,6 +31,7 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  
   container: {
     flex: 1,
     backgroundColor: '#fff',

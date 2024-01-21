@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity, Button, Image } from 'react-n
 import { ButtonComponent } from "../components/ButtonComponent";
 import { CardComponent } from "../components/CardComponent";
 
+
 export const HomeScreen = ({navigation}) => {
     return(
 
@@ -39,13 +40,13 @@ export const HomeScreen = ({navigation}) => {
                 
                 </View>
 
+
         </View>
        
     );
 
-        }
 
-
+}
 
         const styles = StyleSheet.create({
             container: {
