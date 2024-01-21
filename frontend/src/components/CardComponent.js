@@ -1,20 +1,27 @@
 import React from "react";
+import ChatBubble from 'react-native-chat-bubble';
+
 import { StyleSheet, View, Text } from "react-native";
 
 
-export const CardComponent = () => {
-    return(
+export const CardComponent = (chatText) => {
+    return (
         <View style={styles.container}>
-          <View styled={styles.column}>
-            <Text>
-            Column 1 
-            </Text>
-          </View>
-          <View styled={styles.column}>
-            <Text>
-                Column 2 
-            </Text>
-          </View>
+            <View style={styles.chatBubbleContainer}>
+             <ChatBubble
+                    bubbleColor='#fff'
+                    tailColor='#FFFFFF'
+                    withTail={true}
+                    isOwnMessage={true}
+                    maxWidth={900}
+
+                    style={styles.chatBubble}
+                >
+                    <Text style={styles.chatBubbleText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin malesuada sem pulvinar auctor. Fusce vitae orci faucibus, congue metus vel, tempus tortor. Integer ac arcu euismod massa fermentum pulvinar at in felis. Morbi tincidunt dui sit amet neque placerat, quis tempor magna aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin malesuada sem pulvinar auctor. Fusce vitae orci faucibus, congue metus vel, tempus tortor. Integer ac arcu euismod massa fermentum pulvinar at in fel</Text>
+                    {/* will switch this out with the chat text  */}
+                </ChatBubble>
+                </View>
+
         </View>
     );
 }
@@ -25,26 +32,36 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         height: 500,
         width: 300,
-        backgroundColor: "#fffcf2",
-        flexDirection: "row",
         width: "100%",
         height: 150,
-        alignItems: "center",
-       },
-       column: {
-           flexDirection: "column",
-           width: "50%",
-           height: "50%",
-       },
-   
-       image: {
-           width: "100%",
-           height: "100%",
-           borderRadius: 20,
-       },
-       imageContainer: {
-           width: "60%",
-           height: "100%",
-           marginLeft: 50,
-       },
+    },
+    chatBubble: {
+        borderRadius: 10,
+        width: '22rem',
+        height:'20rem',
+
+    },
+    chatBubbleText: {
+        padding:'.7rem',
+        fontFamily: 'Lexend, sans-serif',
+        fontWeight:'300',
+        fontSize: 16,
+        color: '#13171F', 
+
+        textAlign: 'left'
+      },
+    chatBubbleContainer: {
+      margin:'auto'   
+    },
+
+    image: {
+        width: "100%",
+        height: "100%",
+        borderRadius: 20,
+    },
+    imageContainer: {
+        width: "60%",
+        height: "100%",
+        marginLeft: 50,
+    },
 })
