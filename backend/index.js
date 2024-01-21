@@ -4,6 +4,7 @@ const express = require("express");
 const PORT = 3005;
 const app = express();
 const readline = require('readline');
+const fs = require('fs');
 
 // cohere requirements
 const { CohereClient } = require("cohere-ai");
@@ -20,6 +21,8 @@ const summarize = async function (input) {
     });
 
     return response;
+
+    fs.writeFileSync("summary.json", JSON.stringify(response));
 }; 
 
 const classify = async function (input) {
