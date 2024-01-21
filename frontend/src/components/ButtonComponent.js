@@ -60,17 +60,31 @@ const styles = StyleSheet.create({
             
         },
         journalButton:{
-            borderRadius: 30,
-            backgroundColor: "#ABE1E1",
+            borderRadius: 10,
+            backgroundColor: "#105268",
             color: 'white',
             padding: 20,
             height: 100,
             alignContent: 'center',
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
+            marginHorizontal: 20,
+            shadowColor: "#000",
+            shadowOffset: {
+                width: 0,
+                height: 2,
+            },
+            shadowOpacity: 0.5,
+            shadowRadius: 20,
+            
 
-        }
-        
+        }, 
+        journalButtonText: {
+            color: 'white',
+            fontFamily: 'Lexend, sans-serif',
+            fontWeight: '300',
+            fontSize: '20px',
+        },
 
 
     });

@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
-import TypingText from 'react-native-typing-text';
+import { StyleSheet, Text, View, ScrollView, TextInput, Pressable, Image } from 'react-native';
 import { Button } from "react-native-web";
 import { HeaderComponent } from "../components/HeaderComponent";
 
@@ -25,12 +24,12 @@ export const QuestionForm = () => {
         scrollViewRef.current.scrollToEnd({ animated: true });
     }, [questionsAndAnswers, currentAnswer]);
 
-    const handleQuestionSubmit = (e) => {
-        e.preventDefault();
+    const handleQuestionSubmit = () => {
         setQuestionNumber(questionNumber + 1);
         setDisplayAnswer(true);
         setQuestionsAndAnswers((prev) => [...prev, { question: questions[questionNumber], answer: currentAnswer}]);
         setCurrentAnswer('');
+        console.log()
     };
 
     const QuestionAnswerComponent = ({question, answer}) => {
@@ -51,7 +50,7 @@ export const QuestionForm = () => {
 
 
     return(
-        <>
+        <View>
         <HeaderComponent />
          <ScrollView style={styles.scrollContainer}
                      ref={scrollViewRef}
@@ -65,21 +64,29 @@ export const QuestionForm = () => {
             </View>
 
         </ScrollView>
-        <form onSubmit={handleQuestionSubmit} style={styles.inputContainer} >
-            <input
-            type="text"
-            value={currentAnswer}
-            onChange={(e) => setCurrentAnswer(e.target.value)}
-            placeholder="Draft"
-            style={styles.answerInput}
-            />
-            <Button type="submit" onPr>Submit </Button>
-            
-        </form>        
         <View style={styles.voiceRecordContainer}>
-
+            <Pressable style={styles.recordButton}>
+                <Image
+                    source={require('../images/Group.png')}
+                />
+            </Pressable>
+            <View style={styles.inputContainer} >
+                <TextInput
+                type="text"
+                value={currentAnswer}
+                onChange={(e) => setCurrentAnswer(e.target.value)}
+                placeholder="Draft"
+                style={styles.answerInput}
+                />
+                <Pressable style={styles.button} onPress={() => handleQuestionSubmit()}>
+                    <Text>
+                        Enter
+                    </Text>
+                </Pressable>
+            </View> 
+                
         </View>
-        </>
+        </View>
        
     );
      
@@ -114,13 +121,16 @@ const styles = StyleSheet.create({
         width: "70%",
         borderRadius: 20,
         padding: 5,
+        backgroundColor: "white"
     },
 
     inputContainer: {
         width: "100%",
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#112945',
+        flex: 1,
+        flexDirection: 'row',
+        gap: 20
 
     },
 
@@ -128,6 +138,32 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#105268',
         position: 'absolute',
+        bottom: 0,
+        right: 0,
+        width: '100%',
+        height: 200,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+
+    button :{
+        backgroundColor: 'white',
+        padding: 10,
+        borderRadius: 20
+    },
+
+    recordButton:{
+        borderRadius: 60,
+        width: 60,
+        height: 60,
+        backgroundColor: '#112945',
+        alignItems: 'center',
+        justifyContent: 'center',
+
+    },
+    recordText:{
+        color: 'white'
+
     }
     
 })

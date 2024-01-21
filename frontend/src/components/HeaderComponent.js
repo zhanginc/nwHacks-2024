@@ -3,6 +3,8 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
 
 
+
+
 export const HeaderComponent = () => {
     return(
         <View style={styles.container}>
