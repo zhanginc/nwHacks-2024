@@ -5,6 +5,7 @@ import { CardComponent } from "../components/CardComponent";
 
 export const HomeScreen = ({navigation}) => {
     return(
+<<<<<<< HEAD
         <View style={{
             flexDirection:'column',
             flex:1
@@ -15,6 +16,11 @@ export const HomeScreen = ({navigation}) => {
             <ButtonComponent buttonText={"Weekly Summary"} onPress ={() => navigation.navigate("Summary")}/>
             <ButtonComponent buttonText={"Your Archive"}/>
             
+=======
+        <View style={styles.container}>
+            <CardComponent />
+            <CardComponent />
+>>>>>>> main
         </View>
 
     );
@@ -22,10 +28,16 @@ export const HomeScreen = ({navigation}) => {
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
         width: "100%",
         flexDirection: "row",
+<<<<<<< HEAD
         gap: 20,
         padding: 10
+=======
+        gap: 50,
+        backgroundColor: "orange",
+>>>>>>> main
         
        }
 })

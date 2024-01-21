@@ -1,15 +1,19 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 
 
 export const CardComponent = () => {
     return(
         <View style={styles.container}>
           <View styled={styles.column}>
+            <Text>
             Column 1 
+            </Text>
           </View>
           <View styled={styles.column}>
-            Column 2
+            <Text>
+                Column 2 
+            </Text>
           </View>
         </View>
     );
