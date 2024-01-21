@@ -51,7 +51,7 @@ export const QuestionForm = () => {
 
     return(
         <>
-        <HeaderComponent />
+        <HeaderComponent/>
          <ScrollView style={styles.scrollContainer}
                      ref={scrollViewRef}
                      onContentSizeChange={() => scrollViewRef.current.scrollToEnd({ animated: true })}>
