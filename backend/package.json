@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend for nwHacks 2024",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhanginc/nwHacks-2024.git"
+  },
+  "author": "Disha Pandurangi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhanginc/nwHacks-2024/issues"
+  },
+  "homepage": "https://github.com/zhanginc/nwHacks-2024#readme",
+  "dependencies": {
+    "cohere-ai": "^7.7.3"
+  }
+}
