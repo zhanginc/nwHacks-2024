@@ -6,7 +6,7 @@ import { CardComponent } from "../components/CardComponent";
 
 export const HomeScreen = () => {
     return(
-        <View>
+        <View style={styles.container}>
             <CardComponent />
             <CardComponent />
         </View>
@@ -15,9 +15,11 @@ export const HomeScreen = () => {
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
         width: "100%",
         flexDirection: "row",
-        gap: 20,
+        gap: 50,
+        backgroundColor: "orange",
         
        }
 })

@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { HomeScreen } from './src/screens/HomeScreen';
-import { TranscribeScreen } from './src/screens/TranscribeScreen';
+import { QuestionForm } from './src/screens/QuestionForm';
 
 const Stack = createNativeStackNavigator();
 
@@ -12,8 +12,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Transcribe" component={TranscribeScreen} />
+      <Stack.Screen name="Transcribe" component={QuestionForm} />
       </Stack.Navigator>
     </NavigationContainer>
   );
