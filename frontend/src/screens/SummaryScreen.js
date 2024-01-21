@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Button, Image, Pressable } from 'react-native';
 import { ButtonComponent } from "../components/ButtonComponent";
 import { CardComponent } from "../components/CardComponent";
+import moment from 'moment';
 
 export const SummaryScreen = ({ navigation, dateText, emotion, quote, summary }) => {
     return (
@@ -20,7 +21,9 @@ export const SummaryScreen = ({ navigation, dateText, emotion, quote, summary })
             <Text style={styles.headerText} >
                 Journal Entry
             </Text>
-            <Text style={styles.dayText} >Monday, Jan 20</Text>
+            <Text style={styles.dayText} >
+                Sunday, Jan 21st
+                </Text>
             {/* will replace that with the dateText variable that will take in the date of the jouranl */}
             <View style={styles.overlayContainer}>
                 <Image
@@ -88,8 +91,8 @@ const styles = StyleSheet.create({
     },
     backbtn: {
         position: 'absolute',
-        top: 5,
-        left: 5,
+        top: 15,
+        left: 10,
 
     },
     container: {

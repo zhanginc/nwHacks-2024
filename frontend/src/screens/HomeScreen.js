@@ -2,9 +2,11 @@ import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Button, Image } from 'react-native';
 import { ButtonComponent } from "../components/ButtonComponent";
 import { CardComponent } from "../components/CardComponent";
+import moment from 'moment';
 
 
 export const HomeScreen = ({navigation}) => {
+    let currentDate = moment().format('MMM Do, YYYY');
     return(
 
         <View style={styles.container}>
@@ -20,7 +22,7 @@ export const HomeScreen = ({navigation}) => {
                         Name
                     </Text>
                     <Text style={styles.overlayText3} >
-                        Jan 21st, 2024
+                       {currentDate}
                     </Text>
                     <Image style={styles.kitty}
                     source={require('../images/Group_10.svg')} 
