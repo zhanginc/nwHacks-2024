@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
         right: 0,
         justifyContent: 'center',
         alignItems: 'center',
-        gap: 20
+        gap: 20,
 
       },
 
@@ -104,6 +104,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderRadius: 8,
         paddingLeft: 10,
+        backgroundColor: "#D6F8FA"
+
       },
 })
 
