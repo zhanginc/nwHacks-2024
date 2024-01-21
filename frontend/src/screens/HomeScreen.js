@@ -9,10 +9,25 @@ export const HomeScreen = ({navigation}) => {
             flexDirection:'column',
             flex:1
           }}>
-            <ButtonComponent buttonText={"Today's Journal"} onPress={() => navigation.navigate('QuestionForm')}/>
-            <ButtonComponent buttonText={"This Weeks Journal"} onPress={() => navigation.navigate('Journals')}/>
-            <ButtonComponent buttonText={"Weekly Summary"} onPress ={() => navigation.navigate("Summary")}/>
-            <ButtonComponent buttonText={"Your Archive"}/>
+            <ButtonComponent 
+                variant='journal'
+                buttonText={"Today's Journal"} 
+                onPress={() => navigation.navigate('QuestionForm')}/>
+            <ButtonComponent 
+            variant='journal'
+            buttonText={"This Weeks Journal"} onPress={() => 
+            navigation.navigate('Journals')}
+            />
+            <ButtonComponent 
+            variant='journal'
+            buttonText={"Weekly Summary"} 
+            onPress ={() => navigation.navigate("Summary")}
+            />
+            <ButtonComponent 
+            variant='journal'
+            buttonText={"Your Archive"}
+            onPress ={() => navigation.navigate("Summary")}
+            />
             
         </View>
 

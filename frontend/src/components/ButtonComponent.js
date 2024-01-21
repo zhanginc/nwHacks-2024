@@ -1,13 +1,13 @@
 import React from "react";
-import { StyleSheet, TouchableOpacity, View, Text, Dimensions } from "react-native";
+import { StyleSheet, Pressable, View, Text, Dimensions } from "react-native";
 
 const screenWidth = Dimensions.get('window').width;
 buttonWidth = screenWidth - 120;
 
 export const ButtonComponent = ({buttonText, onPress, variant}) => {
     return(
-        <View style={styles.container}>
-            <TouchableOpacity 
+        <View>
+            <Pressable
               style={[
                 styles.container, 
                 variant === 'journal' && styles.journalButton,
@@ -15,33 +15,23 @@ export const ButtonComponent = ({buttonText, onPress, variant}) => {
               ]}
               onPress={onPress}>
                 <Text>{buttonText}</Text> 
-            </TouchableOpacity>
+            </Pressable>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
-        container: {
-            alignSelf: "center",
-            elevation: 40,
-            borderRadius: 5,
-            backgroundColor: "gray",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: 'center',
-            width: buttonWidth,
-            height: 70,
-            marginVertical: 10
-        },
-        column: {
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-        },
         getStarted: {
-                backgroundColor:"blue"
+            borderRadius: 30,
+            backgroundColor: "#ABE1E1",
+            color: 'white',
+            padding: 20,
         },
         journalButton:{
+            borderRadius: 30,
+            backgroundColor: "#ABE1E1",
+            color: 'white',
+            padding: 20,
 
         }
 
