@@ -19,7 +19,6 @@ export default function App() {
       <Stack.Screen name="Welcome" component={WelcomeScreen} />  
       <Stack.Screen name="Sign in" component={SignInScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Transcribe" component={TranscribeScreen} />
       <Stack.Screen name="Journals" component={JournalScreen} />
       <Stack.Screen name="Summary" component={SummaryScreen} />
       <Stack.Screen name="QuestionForm" component={QuestionForm} />
