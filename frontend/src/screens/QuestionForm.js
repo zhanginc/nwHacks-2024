@@ -50,7 +50,7 @@ export const QuestionForm = () => {
 
 
     return(
-        <>
+        <View>
         <HeaderComponent />
          <ScrollView style={styles.scrollContainer}
                      ref={scrollViewRef}
@@ -64,8 +64,6 @@ export const QuestionForm = () => {
             </View>
 
         </ScrollView>
-        
-               
         <View style={styles.voiceRecordContainer}>
             <Pressable style={styles.recordButton}>
                 <Image
@@ -91,7 +89,7 @@ export const QuestionForm = () => {
                 </Pressable>
                 
         </View>
-        </>
+        </View>
        
     );
      
