@@ -1,14 +1,16 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
 
 
 export const HeaderComponent = () => {
     return(
         <View style={styles.container}>
+            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
             <Image
                 source={require('../images/chevron-left.png')}
             />
+            </TouchableOpacity>
             <Text style={styles.subHeading}>
                 Journal Entry
             </Text>
