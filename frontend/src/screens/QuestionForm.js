@@ -2,9 +2,10 @@ import React, { useState, useRef, useEffect } from "react";
 import { StyleSheet, Text, View, ScrollView, TextInput, Pressable, Image } from 'react-native';
 import { Button } from "react-native-web";
 import { HeaderComponent } from "../components/HeaderComponent";
-
+import { useNavigation } from '@react-navigation/native';
 
 export const QuestionForm = () => {
+    const navigation = useNavigation();
     // these are the set of Questions we are asking 
     const [questionsAndAnswers, setQuestionsAndAnswers] = useState([]);
     const [questionNumber, setQuestionNumber] = useState(0);
@@ -47,7 +48,24 @@ export const QuestionForm = () => {
             </>
         );
     }
-
+    const callApiEndpoint = async () => {
+        const arrayOfAnswers = questionsAndAnswers.map((obj) => obj.answer);
+    
+        fetch(
+          `http://localhost:3005/api/summarize?arrayOfAnswers=${arrayOfAnswers}`,
+          {
+            method: "GET",
+          }
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data.text);
+            navigation.navigate('Summary', { summaryText: data.text });
+          })
+          .catch((err) => console.log(err));
+    
+    
+      };
 
     return(
         <>
@@ -86,7 +104,7 @@ export const QuestionForm = () => {
                         </Text>
                     </Pressable>
                 </View> 
-                <Pressable style={styles.finishButton} onPress={() => navigation.navigate('Journals')}>
+                <Pressable style={styles.finishButton} onPress={callApiEndpoint}>
                 <Text style={styles.finishText}>I'm Done</Text>
                 </Pressable>
                 
