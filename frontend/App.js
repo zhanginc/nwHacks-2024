@@ -11,8 +11,10 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-      <Stack.Screen name="Transcribe" component={QuestionForm} />
+      <Stack.Navigator
+        screenOptions={{headerShown: false}}
+      >
+      <Stack.Screen name="QuestionForm" component={QuestionForm} />
       </Stack.Navigator>
     </NavigationContainer>
   );

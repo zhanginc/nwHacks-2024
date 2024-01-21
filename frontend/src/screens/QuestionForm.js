@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
 import TypingText from 'react-native-typing-text';
+import { Button } from "react-native-web";
+import { HeaderComponent } from "../components/HeaderComponent";
 
 
 export const QuestionForm = () => {
@@ -8,8 +10,8 @@ export const QuestionForm = () => {
     const [questionsAndAnswers, setQuestionsAndAnswers] = useState([]);
     const [questionNumber, setQuestionNumber] = useState(0);
     const [questions, setQuestions] = useState([
-        "This is generic question 1?",
-        "This is generic question 2?",
+        "Who did you interact with today?",
+        "What did you guys do?",
         "This is generic question 3?",
         "This is generic question 4?",
         "This is generic question 5?",
@@ -50,6 +52,7 @@ export const QuestionForm = () => {
 
     return(
         <>
+        <HeaderComponent />
          <ScrollView style={styles.scrollContainer}
                      ref={scrollViewRef}
                      onContentSizeChange={() => scrollViewRef.current.scrollToEnd({ animated: true })}>
@@ -70,7 +73,8 @@ export const QuestionForm = () => {
             placeholder="Draft"
             style={styles.answerInput}
             />
-            <button type="submit" >Submit</button>
+            <Button type="submit" onPr>Submit </Button>
+            
         </form>        
         <View style={styles.voiceRecordContainer}>
 
