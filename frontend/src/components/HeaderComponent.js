@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 
 
 
@@ -8,11 +8,11 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 export const HeaderComponent = () => {
     return(
         <View style={styles.container}>
-            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+            <Pressable onPress={() => navigation.navigate('Home')}>
             <Image
                 source={require('../images/chevron-left.png')}
             />
-            </TouchableOpacity>
+            </Pressable>
             <Text style={styles.subHeading}>
                 Journal Entry
             </Text>
@@ -31,17 +31,23 @@ const styles = StyleSheet.create({
         backgroundColor: "#105268",
         padding: 20,
         rowGap: 10,
+        borderRadius: 10,
     },
 
     heading: {
         fontSize: 30,
+        marginTop: -1,
         color: "#D6F8FA",
-        fontWeight: 'bold',
+        fontWeight: 400,
+        fontFamily: 'Lexend, sans-serif',
+
     },
     
     subHeading: {
         fontSize: 20,
-        color: "#D6F8FA"
+        color: "#D6F8FA",
+        fontFamily: 'Lexend, sans-serif',
+        fontWeight: 300,
 
     }
 

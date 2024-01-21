@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     },
     overlayTextContainer: {
         position: 'absolute',
-        top: "40%",
+        top: "35%",
         left: 0,
         right: 0,
         justifyContent: 'center',
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
 
       content: {
         position: 'absolute',
-        top: '70%', 
+        top: '60%',
         left: 0,
         right: 0,
         justifyContent: 'center',
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
 
       input: {
         position: 'absolute',
-        top: '50%', // Adjust the percentage as needed
+        top: '45%', // Adjust the percentage as needed
         left: 0,
         right: 0,
         justifyContent: 'center',

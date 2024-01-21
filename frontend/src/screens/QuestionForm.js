@@ -29,7 +29,7 @@ export const QuestionForm = () => {
         setDisplayAnswer(true);
         setQuestionsAndAnswers((prev) => [...prev, { question: questions[questionNumber], answer: currentAnswer}]);
         setCurrentAnswer('');
-        console.log()
+        console.log(questionsAndAnswers);
     };
 
     const QuestionAnswerComponent = ({question, answer}) => {
@@ -50,7 +50,7 @@ export const QuestionForm = () => {
 
 
     return(
-        <View>
+        <>
         <HeaderComponent />
          <ScrollView style={styles.scrollContainer}
                      ref={scrollViewRef}
@@ -64,29 +64,34 @@ export const QuestionForm = () => {
             </View>
 
         </ScrollView>
+        
+               
         <View style={styles.voiceRecordContainer}>
             <Pressable style={styles.recordButton}>
                 <Image
                     source={require('../images/Group.png')}
                 />
             </Pressable>
-            <View style={styles.inputContainer} >
-                <TextInput
-                type="text"
-                value={currentAnswer}
-                onChange={(e) => setCurrentAnswer(e.target.value)}
-                placeholder="Draft"
-                style={styles.answerInput}
-                />
-                <Pressable style={styles.button} onPress={() => handleQuestionSubmit()}>
-                    <Text>
-                        Enter
-                    </Text>
+                <View style={styles.inputContainer} >
+                    <TextInput
+                    type="text"
+                    value={currentAnswer}
+                    onChange={(e) => setCurrentAnswer(e.target.value)}
+                    placeholder="Draft"
+                    style={styles.answerInput}
+                    />
+                    <Pressable style={styles.button} onPress={() => handleQuestionSubmit()}>
+                        <Text>
+                            Enter
+                        </Text>
+                    </Pressable>
+                </View> 
+                <Pressable style={styles.finishButton} onPress={() => navigation.navigate('Journals')}>
+                <Text style={styles.finishText}>I'm Done</Text>
                 </Pressable>
-            </View> 
                 
         </View>
-        </View>
+        </>
        
     );
      
@@ -107,6 +112,9 @@ const styles = StyleSheet.create({
         alignContent: 'flex-end',
         alignItems:'flex-end',
         
+    },
+    containerMain: {
+        backgroundColor:  '#112945',
     },
 
     questionAnswerContainer: {
@@ -140,10 +148,13 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 0,
         right: 0,
+        left: 0,
         width: '100%',
         height: 200,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        gap: 10,
+        padding: 20
     },
 
     button :{
@@ -152,10 +163,26 @@ const styles = StyleSheet.create({
         borderRadius: 20
     },
 
+    finishText:{
+        color: 'white',
+    },
+
+    finishButton:{
+        borderRadius: 20,
+        backgroundColor: '#112945',
+        height: 30,
+        padding: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        alignContent: 'center'
+    },
+
     recordButton:{
-        borderRadius: 60,
+        borderRadius: 100,
         width: 60,
         height: 60,
+        padding: 30,
         backgroundColor: '#112945',
         alignItems: 'center',
         justifyContent: 'center',
