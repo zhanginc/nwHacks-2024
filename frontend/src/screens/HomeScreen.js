@@ -5,10 +5,7 @@ import { CardComponent } from "../components/CardComponent";
 
 export const HomeScreen = ({navigation}) => {
     return(
-        <View style={{
-            flexDirection:'column',
-            flex:1
-          }}>
+        <View style={styles.container}>
             <ButtonComponent 
                 variant='journal'
                 buttonText={"Today's Journal"} 
@@ -38,9 +35,9 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         width: "100%",
-        flexDirection: "row",
+        flexDirection: "column",
         gap: 20,
-        padding: 10
+
         
        }
 })
