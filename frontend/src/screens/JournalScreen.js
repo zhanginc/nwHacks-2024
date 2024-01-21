@@ -2,24 +2,37 @@ import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Button, Image } from 'react-native';
 import { ButtonComponent } from "../components/ButtonComponent";
 import { CardComponent } from "../components/CardComponent";
+import moment from 'moment';
 
 export const JournalScreen = ({navigation}) => {
+    let now = moment();
+
+    let weekStart = now.clone().startOf('isoWeek'); 
+    let weekEnd = now.clone().endOf('isoWeek'); 
+
+    let formattedStart = weekStart.format('M/D'); 
+    let formattedEnd = weekEnd.format('M/D'); 
+    
+    let weekRange = `${formattedStart} - ${formattedEnd}`;
+    
+
     return(
 
         <View style={styles.container}>
             <Image
                 source={require('../images/journals_of_the_week_1.svg')}
             />
-            <TouchableOpacity style={styles.backbtn} onPress={() => navigation.navigate('Home')}>
-                <Image
-                    source={require('../images/chevron-left.png')}
-
-                />
-            </TouchableOpacity>
+            
        
                 <View style={styles.overlayTextContainer}>
+                <TouchableOpacity style={styles.backbtn} onPress={() => navigation.navigate('Home')}>
+                <Image
+                    source={require('../images/chevron-left.png')}
+                
+                />
+            </TouchableOpacity>
                     <Text style={styles.overlayText} >
-                        1/20 - 1/27
+                        {weekRange}
                     </Text>
                    
                     <Text style={styles.overlayText1} >
@@ -103,7 +116,7 @@ export const JournalScreen = ({navigation}) => {
                 fontFamily: 'Lexend, sans-serif',
                 width: "100%",
                 textAlign: 'left',
-                left: 40,
+                left: 20,
                 top: 50,
                 fontWeight: "light"
               },
@@ -114,7 +127,7 @@ export const JournalScreen = ({navigation}) => {
                 color: '#D6F8FA', 
                 width: "100%",
                 textAlign: 'left',
-                left: 40,
+                left: 20,
                 top: 50
               },
         
@@ -137,14 +150,14 @@ export const JournalScreen = ({navigation}) => {
             },
               backbtn: {
                 position: 'absolute',
-                top: 5,
-                left: 5,
+                top: 15,
+                left: 10,
         
             },
             chev:{
                 padding: 20,
                 position: 'absolute',
-                top: 5,
+                top: 15,
                 left: 5,
         
             }

@@ -1,11 +1,13 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, Pressable } from "react-native";
-
+import moment from 'moment';
 
 
 
 
 export const HeaderComponent = () => {
+    let currentDate = moment().format('dddd, MMMM Do');
+
     return(
         <View style={styles.container}>
             <Pressable onPress={() => navigation.navigate('Home')}>
@@ -17,7 +19,7 @@ export const HeaderComponent = () => {
                 Journal Entry
             </Text>
             <Text style={styles.heading}>
-                Monday, January 20
+                {currentDate}
             </Text>
 
         </View>
