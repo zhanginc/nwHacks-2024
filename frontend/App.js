@@ -7,6 +7,8 @@ import { SignInScreen } from './src/screens/SignInScreen';
 import { WelcomeScreen } from './src/screens/WelcomeScreen';
 import { JournalScreen } from './src/screens/JournalScreen';
 import { SummaryScreen } from './src/screens/SummaryScreen';
+import { WeeklyScreen } from './src/screens/WeeklyScreen';
+
 import { QuestionForm } from './src/screens/QuestionForm';
 
 
@@ -25,6 +27,8 @@ export default function App() {
       <Stack.Screen name="Journals" component={JournalScreen} />
       <Stack.Screen name="Summary" component={SummaryScreen} />
       <Stack.Screen name="QuestionForm" component={QuestionForm} />
+
+      <Stack.Screen name="Weekly" component={WeeklyScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

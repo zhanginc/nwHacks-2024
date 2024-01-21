@@ -40,7 +40,7 @@ export const HomeScreen = ({navigation}) => {
                     </TouchableOpacity>
 
                     <TouchableOpacity  style={styles.button}>
-                        <ButtonComponent buttonText={"Weekly Summary"} onPress={() => navigation.navigate("Summary")} variant='journal'/>
+                        <ButtonComponent buttonText={"Weekly Summary"} onPress={() => navigation.navigate("Weekly")} variant='journal'/>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.button}>
